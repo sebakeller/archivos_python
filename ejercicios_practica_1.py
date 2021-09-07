@@ -18,7 +18,7 @@ def ej1():
     # el diccionario vacio debe llamarse "stock"
     
     # stock = ....
-
+        
     # Luego de crear el diccionario completelo
     # con el siguiente stock:
     # tornillos = 100
@@ -28,11 +28,15 @@ def ej1():
     # Los nombres tornillos, tuercas y arandelas
     # son las claves (keys) del diccionario
     # mientras que las cantidades son los valores (values)
-
+    
     # Una vez armado el diccionario imprimirlo en pantalla con print
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
-
+    stock = {} 
+    stock['tornillos'] = 100
+    stock['tuercas'] = 150
+    stock['arandelas'] = 300
+    print(stock)
 
 def ej2():
     print('Ejercicio con diccionarios 2º')
@@ -40,7 +44,16 @@ def ej2():
     # como una base de datos. Comenzaremos con un diccionario de stock
     # de nuestros productos en cero:
     
-    strock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    #stock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    stock = {} 
+    stock['tornillos'] = 0
+    stock['tuercas'] = 0
+    stock['arandelas'] = 0
+    
+    for k in stock:
+        print(k)
+
+
 
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
@@ -66,6 +79,29 @@ def ej2():
     # imprimir en pantalla con print el diccionario con el stock final
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    print("Que producto desea ingresar al stock")
+
+    while True:
+        producto = str(input())
+        if producto == "fin":
+               break
+        elif  producto not in stock.items():
+              print("Ingrese el producto correcto")
+        else:
+            for i in range(len(stock)):
+                producto = stock[i]
+                for k,v in range(len(stock)):
+                    print("Ingrese la cantidad del producto")
+                    cantidad = float(input())
+                    stock[k]= v + cantidad
+                    print(stock)
+            if str(input()) == "fin":
+                break
+    
+                
+                
+
+             
 
 
 if __name__ == '__main__':
